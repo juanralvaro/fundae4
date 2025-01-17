@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Pedido</h1>
+    <form action="/enviar_pedido" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido1">Primer Apellido:</label>
+        <input type="text" id="apellido1" name="apellido1" required>
+
+        <label for="apellido2">Segundo Apellido:</label>
+        <input type="text" id="apellido2" name="apellido2" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
+
+        <label for="altura">Altura (cm):</label>
+        <input type="number" id="altura" name="altura" min="0" step="0.1" required>
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" min="0" step="0.1" required>
+
+        <label for="pecho">Anchura de Pecho (cm):</label>
+        <input type="number" id="pecho" name="pecho" min="0" step="0.1" required>
+
+        <label for="cintura">Anchura de Cintura (cm):</label>
+        <input type="number" id="cintura" name="cintura" min="0" step="0.1" required>
+
+        <label for="caderas">Anchura de Caderas (cm):</label>
+        <input type="number" id="caderas" name="caderas" min="0" step="0.1" required>
+
+        <label for="foto">Foto de cuerpo entero:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required>
+
+        <label for="direccion">Dirección de Envío:</label>
+        <textarea id="direccion" name="direccion" rows="3" required></textarea>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+
+        <label for="metodo_pago">Método de Pago:</label>
+        <select id="metodo_pago" name="metodo_pago" required>
+            <option value="" disabled selected>Seleccione un método de pago</option>
+            <option value="paypal">PayPal</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+            <option value="contrareembolso">Contra Reembolso</option>
+        </select>
+
+        <button type="submit">Enviar Pedido</button>
+    </form>
+</body>
+</html>
