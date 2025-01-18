@@ -6,7 +6,7 @@
     <title>Formulario de Pedido</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Roboto, sans-serif;
             line-height: 1.6;
             margin: 20px;
         }
@@ -44,7 +44,8 @@
     </style>
 </head>
 <body>
-    <h1>Formulario de Pedido</h1>
+    <h1>Armadura Shogun</h1>
+    <h2>FORMULARIO DE PEDIDO</h2>
     <form action="/enviar_pedido" method="POST" enctype="multipart/form-data">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
@@ -79,7 +80,7 @@
         <label for="foto">Foto de cuerpo entero:</label>
         <input type="file" id="foto" name="foto" accept="image/*" required>
 
-        <label for="direccion">Dirección de Envío:</label>
+        <label for="direccion">Dirección de envío:</label>
         <textarea id="direccion" name="direccion" rows="3" required></textarea>
 
         <label for="comentarios">Comentarios:</label>
@@ -89,11 +90,11 @@
         <select id="metodo_pago" name="metodo_pago" required>
             <option value="" disabled selected>Seleccione un método de pago</option>
             <option value="paypal">PayPal</option>
-            <option value="transferencia">Transferencia Bancaria</option>
-            <option value="contrareembolso">Contra Reembolso</option>
+            <option value="transferencia">Transferencia bancaria</option>
+            <option value="contrareembolso">Contra reembolso</option>
         </select>
 
-        <button type="submit">Enviar Pedido</button>
+        <button type="submit">Enviar pedido</button>
     </form>
 </body>
 </html>
